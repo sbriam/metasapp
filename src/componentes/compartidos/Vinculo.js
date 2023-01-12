@@ -1,11 +1,20 @@
-import estilos from './vinculo.module.css';
-function Vinculo({ Icono, texto, href }) {
+import React from "react";
+import { Link } from "react-router-dom";
+import estilos from "./Vinculo.module.css";
+
+interface VinculoProps {
+  Icono: any;
+  texto: string;
+  to: string;
+}
+
+function Vinculo({ Icono, texto, to }: VinculoProps) {
   return (
-    <a href={href} className={estilos.vinculo}>
-        <Icono className={estilos.icono}/>
-        {texto && <span className={estilos.texto}>{texto}</span>}
-    </a>
+    <Link to={to} className={estilos.vinculo}>
+      <Icono className={estilos.icono} />
+      {texto && <span className={estilos.texto}>{texto}</span>}
+    </Link>
   );
 }
 
-export default Vinculo; 
+export default Vinculo;
