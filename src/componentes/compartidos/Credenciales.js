@@ -15,8 +15,8 @@ function Credenciales({ enviar, titulo, boton }: CredencialesProps) {
 
   const { usuario, clave } = form;
 
-  const onChange = (event: ChangeEvent, prop: string) => {
-    const value = (event.target as HTMLInputElement).value;
+  const onChange = (event: ChangeEvent<HTMLInputElement>, prop: string) => {
+    const value = event.target.value;
     setForm((estado) => ({ ...estado, [prop]: value }));
   };
 
@@ -28,7 +28,7 @@ function Credenciales({ enviar, titulo, boton }: CredencialesProps) {
   };
 
   return (
-    <div className={'tarjeta ' + estilos.auth}>
+    <div className={"tarjeta " + estilos.auth}>
       <h1 className={estilos.head}>{titulo}</h1>
       <form className="p-4">
         <label className="label">

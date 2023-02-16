@@ -4,7 +4,9 @@ interface Token {
   token: string;
 }
 
-export async function registrarse(credenciales: CredencialesTipo): Promise<Token> {
+export async function registrarse(
+  credenciales: CredencialesTipo
+): Promise<Token> {
   const response = await fetch(`/api/signup`, {
     method: "POST",
     body: JSON.stringify(credenciales),
@@ -12,10 +14,10 @@ export async function registrarse(credenciales: CredencialesTipo): Promise<Token
       "content-type": "application/json; charset=UTF-8",
     },
   });
-  if (response.status !== 200) throw new Error(); 
+  if (response.status !== 200) throw new Error();
   const token: Token = await response.json();
   return token;
-};
+}
 
 export async function acceder(credenciales: CredencialesTipo): Promise<Token> {
   const response = await fetch(`/api/login`, {
@@ -25,7 +27,7 @@ export async function acceder(credenciales: CredencialesTipo): Promise<Token> {
       "content-type": "application/json; charset=UTF-8",
     },
   });
-  if (response.status !== 200) throw new Error(); 
+  if (response.status !== 200) throw new Error();
   const token: Token = await response.json();
   return token;
-};
+}

@@ -6,7 +6,6 @@ import Pie from "./Pie";
 import estilos from "./Layout.module.css";
 
 function Layout({ privado }) {
-
   return (
     <>
       <Encabezado></Encabezado>

@@ -1,4 +1,4 @@
 export interface CredencialesTipo {
-    usuario: string;
-    clave: string;
-  }
+  usuario: string;
+  clave: string;
+}

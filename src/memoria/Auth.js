@@ -1,8 +1,8 @@
 import React, { createContext, useReducer } from "react";
 
 const estadoInicial = {
-  token: '',
-  autenticado: false
+  token: "",
+  autenticado: false,
 };
 
 function reductor(estado, accion) {
@@ -10,7 +10,7 @@ function reductor(estado, accion) {
     case "colocar": {
       const nuevoEstado = {
         token: accion.token,
-        autenticado: true
+        autenticado: true,
       };
       return nuevoEstado;
     }
@@ -24,7 +24,9 @@ export let ContextoAuth = createContext(null);
 
 function AuthMemoria({ children }) {
   const value = useReducer(reductor, estadoInicial);
-  return <ContextoAuth.Provider value={value}>{children}</ContextoAuth.Provider>;
+  return (
+    <ContextoAuth.Provider value={value}>{children}</ContextoAuth.Provider>
+  );
 }
 
 export default AuthMemoria;

@@ -2,7 +2,11 @@ import React from "react";
 import { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router";
 import { ContextoMetas } from "../../../memoria/Metas";
-import { actualizarMeta, borrarMeta, crearMeta } from "../../../servicios/Metas.ts";
+import {
+  actualizarMeta,
+  borrarMeta,
+  crearMeta,
+} from "../../../servicios/Metas.ts";
 function Detalles() {
   const { id } = useParams();
 

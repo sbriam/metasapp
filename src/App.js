@@ -16,7 +16,7 @@ import { Autenticar } from "./componentes/compartidos/Autenticar";
 function App() {
   const [, enviar] = useContext(ContextoMetas);
 
-  useEffect( () => {
+  useEffect(() => {
     (async function () {
       const metas = await pedirMetas();
       enviar({ tipo: "colocar", metas });
@@ -25,16 +25,14 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/"
-        element={<Navigate to="/lista" />}
-      />
+      <Route path="/" element={<Navigate to="/lista" />} />
       <Route element={<Layout />}>
         <Route path="/acceso" element={<Acceso />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="*" element={<NoEncontrado />} />
       </Route>
       <Route element={<Layout privado />}>
-        <Route element={<Autenticar />} >
+        <Route element={<Autenticar />}>
           <Route path="/lista" element={<Lista />}>
             <Route
               path="/lista/:id"
