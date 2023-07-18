@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ContextoAuth } from "../../../memoria/Auth";
 import { acceder } from "../../../servicios/Auth.ts";
-import Credenciales from "../../compartidos/Credenciales.js";
+import Credenciales from "../../compartidos/Credenciales.tsx";
 
 function Acceso() {
   const navegar = useNavigate();

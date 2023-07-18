@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ContextoAuth } from "../../../memoria/Auth";
-import { registrarse } from "../../../servicios/Auth.ts";
-import Credenciales from "../../compartidos/Credenciales.js";
+import { registrarse } from "../../../servicios/Auth";
+import Credenciales from "../../compartidos/Credenciales";
 
 function Registro() {
   const navegar = useNavigate();
